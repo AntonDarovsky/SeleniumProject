@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
+using System.Threading;
 
 namespace SeleniumProject
 {
@@ -13,7 +14,7 @@ namespace SeleniumProject
         public static readonly By _passwordButtonXpath = By.Id("passwordNext");
         public static readonly By _languageSelectorXpath = By.Id("lang-chooser");
         public static readonly By _englishLanguageXpath = By.XPath("//*[@id='lang-chooser']/div[2]/div[10]");
-
+       
         public LoginPageGmail(IWebDriver driver): base(driver)
         {
             
@@ -24,7 +25,8 @@ namespace SeleniumProject
             Driver.WaitForElement(_languageSelectorXpath, WaitMinutes).Click();
           
             Driver.WaitForElement(_englishLanguageXpath, WaitMinutes).Click();
-          
+            Thread.Sleep(1000);
+
         }
         public void Login(string nick)
         {
@@ -33,12 +35,14 @@ namespace SeleniumProject
             Driver.WaitForElement(_loginButtonXpath, WaitMinutes).Click();
             
 
+
         }
         public void Password( string password)
         {
+            Thread.Sleep(1000);
             Driver.WaitForElement(_passwordEditBoxXpath, WaitMinutes).SendKeys(password);
             
-           
+
         }
         public GmailPage GoToGmailPage()
         {

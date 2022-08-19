@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SeleniumExtras.WaitHelpers;
 using SeleniumProject;
 using System.Threading;
 
@@ -12,7 +13,7 @@ namespace TestSendMessage
     public class GmailTest
     {
         [TestMethod]
-        public void LogininGmail()
+        public void LogininGmailandSendMessage()
         {
             IWebDriver driver = new ChromeDriver();
 
@@ -23,18 +24,27 @@ namespace TestSendMessage
             HomePage homePage = new HomePage(driver);
 
             LoginPageGmail loginPageGmail = homePage.GoToLoginPage();
-            
+
             loginPageGmail.LanguageSelect();
-            Thread.Sleep(1000);
+
             loginPageGmail.Login("antonwork97@gmail.com");
-            Thread.Sleep(1000);
+
             loginPageGmail.Password("antonleo1");
-            Thread.Sleep(1000);
 
             GmailPage gmailPage = loginPageGmail.GoToGmailPage();
-            Thread.Sleep(1000);
 
-            gmailPage.WriteLetter("anton.tiger.97@mail.ru","Message to mail.ru", "Hello!");
+            gmailPage.CheckPage();
+
+            Assert.IsTrue(driver.Title.ToString().Contains("antonwork97@gmail.com"));
+
+            gmailPage.OpenLetter();
+
+            gmailPage.WriteToTextBox("anton.tiger.97@mail.ru");
+
+            gmailPage.WriteTopicTextBox("Message to Mail");
+
+            gmailPage.WriteMessageTextBox("Hello!");
+        
 
            
 

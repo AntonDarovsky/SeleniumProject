@@ -7,6 +7,8 @@ using SeleniumProjectMail;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 
+
+
 namespace TestSendMessage
 {
     [TestClass]
@@ -23,24 +25,17 @@ namespace TestSendMessage
 
             HomePage homePage = new HomePage(driver);
 
-
             LoginPageMail loginPageMail = homePage.GoToLoginPage();
 
-            Thread.Sleep(5000);
-
             loginPageMail.Login("anton.tiger.97");
-
-            Thread.Sleep(1000);
 
             loginPageMail.Password("!GEKAleo97_97");
 
             MailPage mailPage = loginPageMail.GoToMailPage();
 
-            Thread.Sleep(5000);
+            Assert.IsTrue(driver.Title.ToString().Contains("anton.tiger.97@mail.ru"));
 
             mailPage.OpenMessage();
-
-            Thread.Sleep(5000);
 
             mailPage.ReplyMessage("Hello!");
         }

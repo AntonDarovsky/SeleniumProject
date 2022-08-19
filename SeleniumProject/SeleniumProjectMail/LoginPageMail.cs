@@ -21,26 +21,23 @@ namespace SeleniumProjectMail
         public void Login(string nick)
         {
             Driver.WaitForFrameAndSwitchToIt(_frameAvailablelogin, WaitMinutes);
-           
-           
             Driver.WaitForElement(_loginEditBox, WaitMinutes).SendKeys(nick);
             Driver.WaitForElement(_loginButton, WaitMinutes).Click();
-
+            Thread.Sleep(1000);
 
 
         }
         public void Password(string password)
         {
-
- 
             Driver.WaitForElement(_passwordEditBox, WaitMinutes).SendKeys(password);
-            
+            Thread.Sleep(1000);
 
         }
         public MailPage GoToMailPage()
         {
             Driver.WaitForElement(_passwordButton, WaitMinutes).Click();
             return new MailPage(Driver);
+            
         }
     }
 }

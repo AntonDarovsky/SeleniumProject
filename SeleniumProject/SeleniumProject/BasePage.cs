@@ -9,7 +9,7 @@ namespace SeleniumProject
 {
     public abstract class BasePage
     {
-        public static TimeSpan WaitMinutes = TimeSpan.FromMinutes(1);
+        public static TimeSpan WaitMinutes = TimeSpan.FromMinutes(2);
         public IWebDriver Driver { get; }
 
         public BasePage (IWebDriver driver)
