@@ -1,9 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32510.428
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumProject", "SeleniumProject\SeleniumProject.csproj", "{C6E9E854-5B56-4030-9641-7D7A7E8D76B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumProject", "SeleniumProject\SeleniumProject.csproj", "{C6E9E854-5B56-4030-9641-7D7A7E8D76B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSendMessage", "TestSendMessage\TestSendMessage.csproj", "{93AFA950-DCA3-44CD-A79C-88DEA371BC24}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6066E46-9DA2-42A6-8E2B-6B34ABC0CA81} = {E6066E46-9DA2-42A6-8E2B-6B34ABC0CA81}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumProjectMail", "SeleniumProjectMail\SeleniumProjectMail.csproj", "{E6066E46-9DA2-42A6-8E2B-6B34ABC0CA81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{C6E9E854-5B56-4030-9641-7D7A7E8D76B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6E9E854-5B56-4030-9641-7D7A7E8D76B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E9E854-5B56-4030-9641-7D7A7E8D76B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93AFA950-DCA3-44CD-A79C-88DEA371BC24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93AFA950-DCA3-44CD-A79C-88DEA371BC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93AFA950-DCA3-44CD-A79C-88DEA371BC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93AFA950-DCA3-44CD-A79C-88DEA371BC24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6066E46-9DA2-42A6-8E2B-6B34ABC0CA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6066E46-9DA2-42A6-8E2B-6B34ABC0CA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6066E46-9DA2-42A6-8E2B-6B34ABC0CA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6066E46-9DA2-42A6-8E2B-6B34ABC0CA81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
